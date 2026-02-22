@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lahia — منصة التعلم</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Tajawal:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="canvas-bg"></canvas>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<!-- Language Switcher -->
+<div class="lang-switcher">
+  <button class="lang-btn active" onclick="setLang('ar')">AR</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="logo-wrap" style="display:flex;align-items:center;gap:12px;">
+    <img src="logo.png" alt="Lahia Logo" style="height:44px;width:44px;object-fit:contain;filter:invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.85);border-radius:4px;">
+    <div class="logo">LAHIA</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about" data-i18n="nav_about">من نحن</a></li>
+    <li><a href="#courses" data-i18n="nav_courses">الدروس</a></li>
+    <li><a href="#mission" data-i18n="nav_mission">رسالتنا</a></li>
+    <li><a href="#journey" data-i18n="nav_journey">رحلتك</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🚀 <span data-i18n="badge">ابدأ رحلتك نحو التفوق</span></div>
+    <h1 class="hero-title">
+      <span data-i18n="hero_title1">LAHIA</span>
+    </h1>
+    <p class="hero-sub" data-i18n="hero_sub">منصة تعليمية لتطوير مهاراتك في اللغات والبرمجة خطوة بخطوة. هنا تبدأ رحلتك نحو نسخة أفضل منك.</p>
+    <div class="hero-cta">
+      <a href="#courses" class="btn-primary" data-i18n="cta1">اكتشف الدروس</a>
+      <a href="#about" class="btn-secondary" data-i18n="cta2">تعرف علينا</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span data-i18n="scroll">للأسفل</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <span class="stat-num">8+</span>
+    <span class="stat-label" data-i18n="stat1">تخصصات</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">∞</span>
+    <span class="stat-label" data-i18n="stat2">دروس مجانية</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">All</span>
+    <span class="stat-label" data-i18n="stat3">جميع الأعمار</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">01</span>
+    <span class="stat-label" data-i18n="stat4">رحلة تبدأ الآن</span>
+  </div>
+</div>
+
+<!-- About -->
+<section id="about" class="section">
+  <div class="section-tag">
+    <span data-i18n="about_tag">من نحن</span>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2 class="section-title" data-i18n="about_title">منصة تعلّم،<br>يوميات نمو</h2>
+      <p data-i18n="about_p1">هذه المنصة صُممت لمساعدتك على تطوير مهاراتك في الإنجليزية والفرنسية والبرمجة بطريقة منظمة وبسيطة. هدفنا أن نجعل التعلم عادة يومية تقودك نحو التفوق.</p>
+      <p data-i18n="about_p2">في عالم سريع التغير، التعلم الذاتي هو أقوى سلاح. هنا ستجد دروسًا، تمارين، وأهدافًا تساعدك على التقدم خطوة بخطوة.</p>
+      <p data-i18n="about_p3">أنشأت هذا الموقع لأطور نفسي وأوثق رحلتي في التعلم. كل درس هنا هو خطوة نحو نسخة أفضل مني... ويمكنك أن تبدأ رحلتك أيضًا.</p>
+    </div>
+    <div class="about-visual">
+      <div class="about-card">
+        <div class="about-card-quote">"</div>
+        <p class="about-card-text" data-i18n="about_quote">التعلم ليس وجهة، بل رحلة لا تنتهي. كل يوم تتعلم فيه شيئًا جديدًا هو انتصار.</p>
+        <div class="about-card-author">— LAHIA PLATFORM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Courses -->
+<section id="courses" class="courses-full">
+  <div class="courses-header">
+    <div class="section-tag">
+      <span data-i18n="courses_tag">ما نقدمه</span>
+    </div>
+    <h2 class="section-title" data-i18n="courses_title">تخصصاتنا التعليمية</h2>
+  </div>
+  <div class="courses-carousel-wrap">
+    <div class="courses-track-outer">
+      <div class="courses-track" id="coursesTrack">
+
+        <div class="course-card">
+          <span class="course-icon">🇬🇧</span>
+          <div class="course-num">01 — ENGLISH</div>
+          <h3 class="course-title" data-i18n="c1_title">اللغة الإنجليزية</h3>
+          <p class="course-desc" data-i18n="c1_desc">من الأساسيات حتى الإتقان. دروس في القواعد، المفردات، المحادثة، والكتابة لجميع المستويات والأعمار.</p>
+          <div class="course-tags">
+            <span class="tag">Grammar</span><span class="tag">Speaking</span><span class="tag">Writing</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <span class="course-icon">🇫🇷</span>
+          <div class="course-num">02 — FRANÇAIS</div>
+          <h3 class="course-title" data-i18n="c2_title">اللغة الفرنسية</h3>
+          <p class="course-desc" data-i18n="c2_desc">تعلم الفرنسية بأسلوب عصري وممتع. محادثات يومية، ثقافة، وقواعد لغوية مبسّطة لكل مرحلة.</p>
+          <div class="course-tags">
+            <span class="tag">Grammaire</span><span class="tag">Conversation</span><span class="tag">Culture</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <span class="course-icon">💻</span>
+          <div class="course-num">03 — CODING</div>
+          <h3 class="course-title" data-i18n="c3_title">البرمجة</h3>
+          <p class="course-desc" data-i18n="c3_desc">ادخل عالم البرمجة من الصفر. HTML, CSS, JavaScript, Python وأكثر — مع مشاريع تطبيقية حقيقية.</p>
+          <div class="course-tags">
+            <span class="tag">Web Dev</span><span class="tag">Python</span><span class="tag">Projects</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <span class="course-icon">🔢</span>
+          <div class="course-num">04 — MATH</div>
+          <h3 class="course-title" data-i18n="c4_title">الرياضيات</h3>
+          <p class="course-desc" data-i18n="c4_desc">من الأعداد إلى التكامل والمشتقات. دروس منظمة لجميع المستويات من الابتدائي إلى الجامعي.</p>
+          <div class="course-tags">
+            <span class="tag">Algebra</span><span class="tag">Calculus</span><span class="tag">Statistics</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <span class="course-icon">⚛️</span>
+          <div class="course-num">05 — PHYSIQUE</div>
+          <h3 class="course-title" data-i18n="c5_title">الفيزياء</h3>
+          <p class="course-desc" data-i18n="c5_desc">استكشف قوانين الكون من الميكانيك إلى الكهرباء والضوء. دروس نظرية وتطبيقية.</p>
+          <div class="course-tags">
+            <span class="tag">Mécanique</span><span class="tag">Électricité</span><span class="tag">Optique</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <span class="course-icon">🧬</span>
+          <div class="course-num">06 — SCIENCES</div>
+          <h3 class="course-title" data-i18n="c6_title">العلوم الطبيعية</h3>
+          <p class="course-desc" data-i18n="c6_desc">علم الأحياء، الكيمياء، وعلوم الأرض. فهم الطبيعة وتفسير الظواهر الحية والكيميائية.</p>
+          <div class="course-tags">
+            <span class="tag">Biologie</span><span class="tag">Chimie</span><span class="tag">SVT</span>
+          </div>
+        </div>
+
+        <div class="course-card wide">
+          <span class="course-icon">🧠</span>
+          <div class="course-num">07 — PHILOSOPHIE</div>
+          <h3 class="course-title" data-i18n="c7_title">الفلسفة</h3>
+          <p class="course-desc" data-i18n="c7_desc">تعلم التفكير النقدي والمنطق الفلسفي. الفلسفة الغربية والعربية، تحليل النصوص، والمنهجية في الإجابة على الإشكاليات.</p>
+          <div class="course-tags">
+            <span class="tag">Logique</span><span class="tag">Épistémologie</span><span class="tag">Méthodologie</span><span class="tag">Argumentation</span>
+          </div>
+        </div>
+
+        <div class="course-card trading-card">
+          <div class="trading-live-badge">📡 <span data-i18n="trading_live">مادة جديدة</span></div>
+          <span class="course-icon">📈</span>
+          <div class="course-num">08 — TRADING</div>
+          <h3 class="course-title" data-i18n="c8_title">تعلّم التداول</h3>
+          <p class="course-desc" data-i18n="c8_desc">ادخل عالم الأسواق المالية من الصفر. تحليل تقني، إدارة رأس المال، استراتيجيات التداول في الفوركس والأسهم والعملات الرقمية.</p>
+          <div class="course-tags">
+            <span class="tag">Forex</span><span class="tag">Crypto</span><span class="tag">Analyse Technique</span><span class="tag">Risk Management</span>
+          </div>
+          <div class="trading-mini-chart" id="miniChart"></div>
+        </div>
+
+      </div><!-- end track -->
+    </div><!-- end outer -->
+
+    <!-- Controls -->
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8594;</button>
+    </div>
+
+  </div><!-- end carousel wrap -->
+</section>
+
+<!-- Mission -->
+<section id="mission" class="mission-section">
+  <div class="section-tag">
+    <span data-i18n="mission_tag">رسالتنا</span>
+  </div>
+  <h2 class="section-title" data-i18n="mission_title">لماذا LAHIA؟</h2>
+  <div class="mission-grid">
+    <div class="mission-item featured">
+      <div class="mission-icon">🌟</div>
+      <h3 class="mission-title" data-i18n="m1_title">منصة تعليم + يوميات تطوير ذاتي + Portfolio</h3>
+      <p class="mission-text" data-i18n="m1_text">LAHIA ليست مجرد موقع دروس. هي رحلة موثّقة، بورتفوليو حي، ويوميات تطوير ذاتي. كل محتوى هنا هو دليل على أن التعلم ممكن ومستمر.</p>
+    </div>
+    <div class="mission-item">
+      <div class="mission-icon">📚</div>
+      <h3 class="mission-title" data-i18n="m2_title">محتوى منظّم</h3>
+      <p class="mission-text" data-i18n="m2_text">دروس مرتّبة من الأسهل للأصعب، تناسب جميع الأعمار والمستويات، بلغة واضحة وأمثلة تطبيقية.</p>
+    </div>
+    <div class="mission-item">
+      <div class="mission-icon">🤝</div>
+      <h3 class="mission-title" data-i18n="m3_title">مجتمع متعلمين</h3>
+      <p class="mission-text" data-i18n="m3_text">رحلتك لا تكون وحدك. هذا الموقع يساعد طلابًا آخرين يسيرون نفس الطريق ويحتاجون نفس الدعم.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Journey -->
+<section id="journey" class="journey-section">
+  <div class="journey-inner">
+    <div class="section-tag">
+      <span data-i18n="journey_tag">كيف تبدأ</span>
+    </div>
+    <h2 class="section-title" data-i18n="journey_title">رحلتك في أربع خطوات</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-step">STEP 01</div>
+          <h3 class="timeline-title" data-i18n="s1_title">اختر تخصصك</h3>
+          <p class="timeline-desc" data-i18n="s1_desc">ابدأ بما يشعل شغفك: الإنجليزية، الفرنسية، أو البرمجة. لا توجد بداية خاطئة.</p>
+        </div>
+        <div style="position:relative"><div class="timeline-dot"></div></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-step">STEP 02</div>
+          <h3 class="timeline-title" data-i18n="s2_title">اتبع المنهج خطوة بخطوة</h3>
+          <p class="timeline-desc" data-i18n="s2_desc">كل درس بُني بعناية ليُكمّل ما قبله. اتبع الترتيب ولا تقفز.</p>
+        </div>
+        <div style="position:relative"><div class="timeline-dot"></div></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-step">STEP 03</div>
+          <h3 class="timeline-title" data-i18n="s3_title">طبّق وتمرّن يوميًا</h3>
+          <p class="timeline-desc" data-i18n="s3_desc">التعلم الحقيقي في التطبيق. استخدم التمارين والمشاريع الصغيرة لترسيخ المعلومة.</p>
+        </div>
+        <div style="position:relative"><div class="timeline-dot"></div></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-step">STEP 04</div>
+          <h3 class="timeline-title" data-i18n="s4_title">وثّق تقدمك وشاركه</h3>
+          <p class="timeline-desc" data-i18n="s4_desc">أنت لست متعلمًا فقط، أنت تبني سجلًا يُثبت مهاراتك للعالم.</p>
+        </div>
+        <div style="position:relative"><div class="timeline-dot"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-final">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <h2 class="cta-title" data-i18n="cta_title">ابدأ اليوم.<br>ليس غدًا.</h2>
+    <p class="cta-sub" data-i18n="cta_sub">كل إمبراطورية بدأت بخطوة واحدة. هذه الصفحة هي خطوتك الأولى نحو التفوق.</p>
+    <a href="https://yahyalogo.github.io/y-logo-website/index.html" target="_blank" class="btn-primary" data-i18n="cta_btn">🚀 ابدأ رحلتك الآن</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">LAHIA</div>
+  <div class="footer-text" data-i18n="footer">© 2024 Lahia Platform — رحلة التعلم لا تنتهي</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
